@@ -5,11 +5,18 @@ public class _GameManager : MonoBehaviour
 {
     private GameData Data;
 
-    private void Start()
+    private void Awake()
     {
         Data= GameObject.FindGameObjectWithTag("data").GetComponent<GameData>();
-        Data.Score = 0;
+        Data.GamePause = false;
         Data.GameOver = false;
+        Data.Score = 0;
+        Data.tiles.Clear();
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()

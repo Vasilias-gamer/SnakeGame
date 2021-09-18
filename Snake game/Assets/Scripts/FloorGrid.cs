@@ -13,7 +13,6 @@ public class FloorGrid : MonoBehaviour
     private void Start()
     {
         Data = GameObject.FindGameObjectWithTag("data").GetComponent<GameData>();
-        Data.tiles.Clear();
         Size = Data.SetGridSize;
         GenerateGrid();
     }

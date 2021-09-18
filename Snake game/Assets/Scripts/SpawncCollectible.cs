@@ -16,6 +16,7 @@ public class SpawncCollectible : MonoBehaviour
     {
         if (counter > Data.SetCollectableSpwanDelay && !Data.GameOver)
         {
+            Debug.Log(Data.tiles[Random.Range(0, Data.tiles.Count)].transform);
             Transform Randomtile = Data.tiles[Random.Range(0, Data.tiles.Count)].transform;
             
             Transform SpwanedCollactable = Instantiate<GameObject>(Collectible,Randomtile).transform;

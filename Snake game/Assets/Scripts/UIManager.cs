@@ -26,10 +26,10 @@ public class UIManager : MonoBehaviour
         if (Data.CurrentScene.Equals("Game"))
         {
             Score.text = "0" + Data.Score.ToString();
-        }
-        if (Data.GameOver)
-        {
-            StartCoroutine(Menu());
+            if (Data.GameOver)
+            {
+                StartCoroutine(Menu());
+            }
         }
     }
 
