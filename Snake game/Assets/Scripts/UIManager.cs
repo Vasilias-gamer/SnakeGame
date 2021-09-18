@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +29,7 @@ public class UIManager : MonoBehaviour
         }
         if (Data.GameOver)
         {
-            Menu();
+            StartCoroutine(Menu());
         }
     }
 
@@ -55,8 +54,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void Menu()
+    IEnumerator Menu()
     {
+        
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene("Menu");
     }
     

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SnakeMovement : MonoBehaviour
@@ -36,14 +34,14 @@ public class SnakeMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.Equals("wall"))
+        if (collision.gameObject.tag.Equals("wall") && !Data.GameOver)
         {
             Vector3 normal = collision.GetContact(0).normal;
             transform.forward = Vector3.Reflect(transform.forward, normal);
             if(Data.CurrentScene.Equals("Game"))
                 AngleOffset = transform.localEulerAngles.y - Handle.GetAngle();
         }
-        else if (collision.gameObject.tag.Equals("collactable"))
+        else if (collision.gameObject.tag.Equals("collactable") && !Data.GameOver)
         {
             Data.Score++;
             Destroy(collision.gameObject);

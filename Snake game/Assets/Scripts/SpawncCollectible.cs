@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawncCollectible : MonoBehaviour
@@ -16,7 +14,7 @@ public class SpawncCollectible : MonoBehaviour
     }
     private void Update()
     {
-        if (counter > Data.SetCollectableSpwanDelay)
+        if (counter > Data.SetCollectableSpwanDelay && !Data.GameOver)
         {
             Transform Randomtile = Data.tiles[Random.Range(0, Data.tiles.Count)].transform;
             
