@@ -9853,7 +9853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetSnakeSpeed: 1
-  SetGridSize: 2
+  SetGridSize: 8
   SetCollectableSpwanDelay: 2
   SetCollectableOnscreenTime: 5
   tiles: []
